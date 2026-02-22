@@ -1,12 +1,13 @@
-on:
-  push:
-    branches:
-      - main
+name: My First Action  # Name shown in GitHub
+
+on: [push]  # Triggers on any code push (like saving a doc)
 
 jobs:
   test:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest  # Free cloud computer (runner) to use [web:1]
     steps:
-      - name: 23f1001437@ds.study.iitm.ac.in
-        run: echo "Hello, world!"
-      
+      - name: Checkout code  # Step 1: Grab your repo files
+        uses: actions/checkout@v4  # Reusable tool from GitHub [web:7]
+
+      - name: 23f1001437@ds.study.iitm.ac.in  # YOUR REQUIRED STEP (change if your email differs)
+        run: echo "Hello from my action! Email verified."  # Simple command [web:3]
